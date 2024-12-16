@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export const MswComponent = async() => {
+export const MswComponent = () => {
   useEffect(() => {
 
       if (typeof window === 'undefined') {
