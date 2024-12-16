@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 
-export const MswComponent = () => {
+export const MswComponent = async() => {
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+
       if (typeof window === 'undefined') {
         (async () => {
           const { server } = await import('@/mocks/server');
@@ -15,9 +15,9 @@ export const MswComponent = () => {
           const { worker } = await import('@/mocks/browser');
           worker.start();
         })();
-      }
+
     }
-  });
+  }, []);
 
   return null;
 };
